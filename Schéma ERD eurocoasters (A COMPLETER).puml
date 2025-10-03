@@ -28,41 +28,41 @@ entity rollercoasters #FFB84D {
 }
 
 entity constructeurs #7FDB67 {
-    <<PK>> constructeur_id : A_COMPLETER
+    <<PK>> constructeur_id : INTEGER
     --
-    nom : A_COMPLETER
-    adresse : A_COMPLETER
-    url_site_web : A_COMPLETER
-    url_facebook : A_COMPLETER
-    url_instagram : A_COMPLETER
-    url_linked_in : A_COMPLETER
+    nom : VARCHAR(50)
+    adresse : VARCHAR(255)
+    url_site_web : VARCHAR(255)
+    url_facebook : VARCHAR(255)
+    url_instagram : VARCHAR(255)
+    url_linked_in : VARCHAR(255)
     date_creation : YEAR
     --
-    <<FK>> A_COMPLETER : A_COMPLETER
+    <<FK>> A_COMPLETER : INTEGER
 }
 
 entity parcs #4DA8FF {
-    <<PK>> parc_id : A_COMPLETER
+    <<PK>> parc_id : INTEGER
     --
-    nom : A_COMPLETER    
+    nom : VARCHAR(50)    
     date_ouverture : INTEGER
     superficie : INTEGER
     --
-    <<FK>> A_COMPLETER : A_COMPLETER
+    <<FK>> A_COMPLETER : INTEGER
 }
 
 entity villes #FF99FF {
-    <<PK>> ville_id : A_COMPLETER
+    <<PK>> ville_id : INTEGER
     --
-    nom : A_COMPLETER
+    nom : VARCHAR(50)
     --
-    <<FK>> A_COMPLETER : A_COMPLETER
+    <<FK>> A_COMPLETER : INTEGER
 }
 
 entity pays #FF6666 {
-    <<PK>> pays_id : A_COMPLETER
+    <<PK>> pays_id : INTEGER
     --
-    nom : A_COMPLETER
+    nom : VARCHAR(50)
 }
 
 entity compositions #A4F0FF {
