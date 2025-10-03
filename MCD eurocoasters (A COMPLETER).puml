@@ -16,12 +16,12 @@ entity "rollercoaster"  as rollercoaster <<entity>> #FFB84D {
 }
 
 entity "constructeur" as constructeur <<entity>> #7FDB67 {    
-    nom : A_COMPLETER
-    adresse : A_COMPLETER
-    url du site Web : A_COMPLETER
-    url Instagram : A_COMPLETER
-    url LinkedIn : A_COMPLETER
-    date de creation : A_COMPLETER
+    nom : String
+    adresse : String
+    url du site Web : String
+    url Instagram : String
+    url LinkedIn : String
+    date de creation : String
 }
 
 entity "parc" as parc <<entity>> #4DA8FF {    
