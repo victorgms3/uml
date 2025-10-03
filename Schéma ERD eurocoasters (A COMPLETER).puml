@@ -38,7 +38,7 @@ entity constructeurs #7FDB67 {
     url_linked_in : VARCHAR(255)
     date_creation : YEAR
     --
-    <<FK>> A_COMPLETER : INTEGER
+    <<FK>> fk_ville_id : INTEGER
 }
 
 entity parcs #4DA8FF {
@@ -48,7 +48,7 @@ entity parcs #4DA8FF {
     date_ouverture : INTEGER
     superficie : INTEGER
     --
-    <<FK>> A_COMPLETER : INTEGER
+    <<FK>> fk_ville_id : INTEGER
 }
 
 entity villes #FF99FF {
@@ -56,7 +56,7 @@ entity villes #FF99FF {
     --
     nom : VARCHAR(50)
     --
-    <<FK>> A_COMPLETER : INTEGER
+    <<FK>> fk_parc_id : INTEGER
 }
 
 entity pays #FF6666 {
