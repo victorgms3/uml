@@ -48,6 +48,7 @@ CREATE TABLE elements(
 );
 
 
+
 --------------------------------------------------
 --Table rollercoasters
 CREATE TABLE rollercoasters(
@@ -63,6 +64,17 @@ CREATE TABLE rollercoasters(
     fk_parc_id INTEGER REFERENCES parcs(parc_id)
         ON DELETE SET NULL
         ON UPDATE CASCADE
+);
+
+CREATE TABLE compositions(
+    fk_rollercoaster_id INTEGER REFERENCES rollercoasters(rollercoaster_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    fk_element_id INTEGER REFERENCES elements(element_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+    PRIMARY KEY(fk_rollercoaster_id,fk_element_id),
+    nombre INTEGER
 );
 
 
