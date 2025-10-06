@@ -70,7 +70,7 @@ parc "0..*"--" 1 " ville
 ' Ensuite un par aura PLUSIEURS fréquentations (une par année d'exploitation.)
 ' Une fréquentation est en relation avec UN parc pour UNE année.
 ' A COMPLETER LA RELATION
-parc "1" -- "1" frequentation
+frequentation " 0..*" -- " 1 " parc
 
 ' Une ville à UN unique pays, un pays à UNE ou plusieurs villes
 ' A COMPLETER LA RELATION
