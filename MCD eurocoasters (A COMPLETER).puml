@@ -70,11 +70,11 @@ parc "0..*"--" 1 " ville
 ' Ensuite un par aura PLUSIEURS fréquentations (une par année d'exploitation.)
 ' Une fréquentation est en relation avec UN parc pour UNE année.
 ' A COMPLETER LA RELATION
-parc "0..*" -- "1" frequentation
+parc "1" -- "1" frequentation
 
 ' Une ville à UN unique pays, un pays à UNE ou plusieurs villes
 ' A COMPLETER LA RELATION
-ville " 1 "--" 1 " pays
+ville " 1..* "--" 1 " pays
 
 ' Un rollercoaster est composé de PLUSIEURS ELEMENTS et un élément peut se trouver dans PLUSIEURS rollercosters
 ' Un élément peut également avoir un NOMBRE D'OCCURRENCES supérieur à 1 dans un rollercoaster
