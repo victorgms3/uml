@@ -65,6 +65,8 @@ CREATE TABLE rollercoasters(
         ON DELETE SET NULL
         ON UPDATE CASCADE
 );
+--------------------------------------------------
+--Table compositions
 
 CREATE TABLE compositions(
     fk_rollercoaster_id INTEGER REFERENCES rollercoasters(rollercoaster_id)
@@ -77,4 +79,14 @@ CREATE TABLE compositions(
     nombre INTEGER
 );
 
+--------------------------------------------------
+-- Insertion d'elements exemple :
+INSERT INTO nomTable (attribut_1, attribute_2, ..., attribut_n) VALUES
+(val_1_1, val_1_2,..., val_1_n),
+...,
+(val_N_1, val_N_2,..., val_N_n);
+
+--------------------------------------------------
+-- Insertion d'elements pays :
+INSERT INTO pays (pays_id, nom) VALUES(1, 'Allemagne'), (2, 'Autriche'), (3, 'Belgique'), (4, 'Danemark'), (5, 'Espagne'), (6, 'Finlande'),(7, 'France'), (8, 'Hongrie'), (9, 'Irlande'), (10, 'Italie'), (11, 'Norvège'), (12, 'Pays de Galles'),(13, 'Pays-Bas'), (14, 'Pologne'), (15, 'Royaume-Uni'), (16, 'Suède'), (17, 'Turquie'), (18, 'Portugal'),    (19, 'Suisse'), (20, 'États Unis'), (21, 'Japon'), (22, 'Liechtenstein');
 
