@@ -134,3 +134,93 @@ INSERT INTO parcs (parc_id, nom, fk_ville_id, date_ouverture, superficie) VALUES
 SELECT * FROM villes v 
 JOIN pays p FROM fk_pays_id = pays_id
 WHERE p.pays_id = 3 ;
+
+
+--------------------------------------------------
+--Requetes
+
+
+--request 1
+--Affichage des villes avec leurs pays 
+--
+SELECT
+ villes.nom AS VILLE,
+ pays.nom AS PAYS 
+FROM
+ villes
+INNER JOIN pays ON villes.fk_pays_id = pays.pays_id;
+
+--request 2
+--Affichage des parcs avec leurs villes avec leurs pays 
+-- 
+SELECT 
+ parcs.nom  AS PARC,
+ villes.nom AS VILLE,
+ pays.nom AS PAYS 
+FROM
+ villes
+INNER JOIN pays ON villes.fk_pays_id = pays.pays_id
+JOIN parcs ON parcs.fk_ville_id = villes.ville_id;
+
+--request 3
+--requête qui affiche l’ensemble des parcs avec leur fréquentation pour 2023
+-- 
+SELECT 
+ parcs.nom  AS PARC,
+ fre.nombre_visiteurs AS nbVisiteurs,
+ fre.annee AS ANNEE
+FROM
+ parcs
+JOIN frequentations fre ON parcs.parc_id = fre.fk_parc_id
+WHERE annee = '2023';
+
+--request 4
+--requête qui affiche l’ensemble des constructeurs avec leur ville et leur pays
+-- 
+SELECT 
+constructeurs.nom AS CONSTRUCTOR,
+villes.nom AS VILLE,
+pays.nom AS PAYS
+FROM
+constructeurs
+LEFT JOIN villes ON constructeurs.fk_ville_id = villes.ville_id
+LEFT JOIN pays ON villes.fk_pays_id = pays.pays_id;
+
+--request 5
+--requête qui affiche l’ensemble des rollercoasters avec leurs constructeurs et leurs parcs
+-- 
+
+SELECT
+    rollercoasters.nom AS ROLLERCOASTER,
+    constructeurs.nom AS CONSTRUCTEUR,
+    parcs.nom AS PARC,
+    villes.nom AS VILLE,
+    pays.nom AS PAYS
+FROM
+    rollercoasters 
+LEFT JOIN constructeurs  ON rollercoasters.fk_constructeur_id = constructeurs.constructeur_id
+LEFT JOIN parcs ON rollercoasters.fk_parc_id = parcs.parc_id
+LEFT JOIN villes ON parcs.fk_ville_id = villes.ville_id
+LEFT JOIN pays ON villes.fk_pays_id = pays.pays_id;
+
+--request 5
+--une requête qui affiche l’ensemble des rollercoasters avec leurs elements 
+-- 
+SELECT 
+    rollercoasters.nom AS ROLLERCOASTER,
+    elements.nom AS ELEMENT
+FROM
+    rollercoasters
+JOIN compositions ON compositions.fk_rollercoaster_id = rollercoasters.rollercoaster_id
+JOIN elements ON compositions.fk_element_id = elements.element_id;
+
+--
+--
+SELECT
+    r.nom AS ROLLERCOASTER,
+    e.nom AS ELEMENT,
+    c.nombre AS NOMBRE
+FROM
+    rollercoasters r
+JOIN compositions c ON r.rollercoaster_id = c.fk_rollercoaster_id
+JOIN elements e ON c.fk_element_id = e.element_id;
